@@ -1,0 +1,7 @@
+组件库执行npm link将创建一个全局node_modules的软连接
+项目中执行npm link abb-component将在项目node_modules目录下创建一个软连接，
+这个软连接是连接全局node_modules下的abb-component, 再通过这个全局node_modules下的软连接
+连接到组件库abb-component
+
+组件库执行npm link ../vue3-ts-basic/node_modules/vue
+这一步是为了让组件库和项目使用相同的vue版本, 避免因为版本不一致报错

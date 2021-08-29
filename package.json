@@ -1,0 +1,68 @@
+{
+  "name": "abb-component",
+  "version": "1.0.1",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "npm run clean && npm run build:esm && npm run build:umd",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "test": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint --max-warnnings 5",
+    "build:esm": "npx rollup --config ./src/rollup.esm.config.js",
+    "build:umd": "npx rollup --config ./src/rollup.umd.config.js",
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "npm run lint && npm run test && npm run build"
+  },
+  "main": "dist/abb-component.umd.js",
+  "module": "dist/abb-component.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@types/jest": "^24.0.19",
+    "@types/lodash-es": "^4.17.4",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^4.3.8",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "~3.9.3",
+    "vue": "^3.0.0",
+    "vue-jest": "^5.0.0-0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "keywords": [
+    "Component",
+    "UI",
+    "Vue3",
+    "TS"
+  ],
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  }
+}
