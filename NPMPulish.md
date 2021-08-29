@@ -22,3 +22,8 @@ npm install husky@4 -D
     }
 }
 ```
+
+## Travis ci 配置
+* 使用github账户登陆travis ci
+* 配置.travis.yml文件
+* 本地代码修改之后git push就会出发travis自动测试构建
