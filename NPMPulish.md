@@ -24,6 +24,21 @@ npm install husky@4 -D
 ```
 
 ## Travis ci 配置
+ci 持续集成
 * 使用github账户登陆travis ci
 * 配置.travis.yml文件
 * 本地代码修改之后git push就会出发travis自动测试构建
+
+## Travis cd 配置
+cd 持续部署
+```
+deploy:
+  provider: npm
+  email: m15615230270_2@163.com
+  api_key: fce04757-8149-44e1-96db-fad59cb75e44
+  on: 
+    tags: true
+```
+* cat ~/.npmrc 查看npm token
+* sudo gem install travis 安装travis工具
+* travis encrypt --pro fce04757-8149-44e1-96db-fad59cb75e44 --add deploy.api_key
