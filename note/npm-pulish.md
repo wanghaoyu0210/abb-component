@@ -41,4 +41,6 @@ deploy:
 ```
 * cat ~/.npmrc 查看npm token
 * sudo gem install travis 安装travis工具
-* travis encrypt --pro fce04757-8149-44e1-96db-fad59cb75e44 --add deploy.api_key
+* travis encrypt --pro fce04757-8149-44e1-96db-fad59cb75e44 --add deploy.api_key 这一步对npm token 加密
+* git tag -a v.1.0.2 -m "version 1.0.2"
+* git push --tags
